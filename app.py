@@ -3,7 +3,7 @@ from flask_cors import CORS
 import networkx as nx
 import itertools
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 CORS(app)
 
 def is_outerplanar_graph(G):
@@ -105,7 +105,7 @@ def compute_mis():
 
 @app.route('/')
 def home():
-    return send_file('index.html')
+    return send_file(os.path.join(app.static_folder, 'index.html'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
