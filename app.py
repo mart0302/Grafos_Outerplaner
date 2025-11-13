@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import networkx as nx
 import itertools
@@ -105,7 +105,7 @@ def compute_mis():
 
 @app.route('/')
 def home():
-    return send_from_directory('.', 'index.html')
+    return send_file('index.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
