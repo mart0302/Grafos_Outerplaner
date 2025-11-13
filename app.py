@@ -105,17 +105,7 @@ def compute_mis():
 
 @app.route('/')
 def home():
-    return '''
-        <h1>🚀 API de Grafos Outerplanar</h1>
-        <p>Tu API Flask está funcionando correctamente en Vercel.</p>
-        <p>Para usarla, envía una petición <code>POST</code> a la ruta 
-        <code>/compute_mis</code> con un JSON de nodos y aristas.</p>
-        <pre>
-        {
-          "nodes": [1, 2, 3],
-          "edges": [[1, 2], [2, 3]]
-        }
-        </pre>
-    '''
+    return send_from_directory('.', 'index.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
