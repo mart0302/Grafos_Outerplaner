@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import networkx as nx
 import itertools
+import os
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
